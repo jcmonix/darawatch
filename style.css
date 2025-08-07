@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.clickable-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    background-color: white;
+    color: #d10000;
+    border-radius: 8px;
+    border-top: 5px solid #d10000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 100;
+    cursor: pointer; /* Changes cursor to indicate clickable */
+}
+
+.clickable-header:hover {
+    
+    transform: translateY(-2px);
+    background-color: white; /* Slightly darker on hover */
+}
+
+.clickable-header:active {
+    transform: translateY(0) scale(0.98); /* Pressed-down effect */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15), 
+                0 4px 15px rgba(209, 0, 0, 0.2);
+}
+
+.clickable-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.clickable-header:hover h1 {
+    transform: scale(1.02); /* Slight zoom effect */
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.clickable-header:hover .subtitle {
+    transform: scale(1.02);
+}
+
+section {
+    background-color: white;
+    border-radius: 8px;
+    border-top: 5px solid #d10000;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #d10000;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #d10000;
+    padding-bottom: 10px;
+}
+
+.status-guide {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.status {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.critical {
+    background-color: #aa0000bb;
+    color: white;
+}
+
+.low {
+    background-color: #cc0000bb;
+    color: white;
+}
+
+.sufficient {
+    background-color: #ff0000bb;
+    color: white;
+}
+
+.blood-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    perspective: 1000px; /* For 3D effect */
+}
+
+.blood-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #d10000;
+    transition: all 0.3s ease;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.blood-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 20px rgba(209, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.blood-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 15px 25px rgba(209, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.blood-card:hover::after {
+    opacity: 1;
+}
+
+
+
+.blood-type {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #d10000;
+    margin-bottom: 5px;
+}
+
+.blood-units {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.blood-prediction {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(209, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.blood-prediction:hover {
+    box-shadow: 0 8px 30px rgba(209, 0, 0, 0.12);
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+
+th {
+    background-color: #d10000;
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    .blood-types {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .status-guide {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .blood-types {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .chart-container {
+        height: 300px;
+    }
+}
+

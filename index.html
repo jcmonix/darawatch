@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaraWatch - Blood Bank Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header onclick="window.location.reload()" class="clickable-header">
+            <h1>DaraWatch</h1>
+            <p class="subtitle">Blood Bank Dashboard</p>
+        </header>
+
+        <section class="blood-stock">
+            <h2>Current Blood Stock</h2>
+            <div class="blood-types" id="bloodTypes">
+                <!-- Blood types will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section class="blood-prediction">
+            <h2>Monthly Blood Supply Prediction</h2>
+            <div class="chart-container">
+                <canvas id="bloodPredictionChart"></canvas>
+            </div>
+        </section>
+
+        <section class="blood-issuance">
+            <h2>Blood Inventory Log</h2>
+            <div class="table-container">
+                <table id="issuanceTable">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Blood Type</th>
+                            <th>Current Stock (units)</th>
+                            <th>Event</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
